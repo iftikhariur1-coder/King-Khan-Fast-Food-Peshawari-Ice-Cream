@@ -153,6 +153,7 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 1
 var PHONE = "923442285036";var S=function(p){return [["",p]]}, HF=function(h,f){return [["Half",h],["Full",f]]};
 var FL=function(e,n){return [n,e,[["Single",150],["Half",400],["Full",800]]]};
 var CATS = [
+ {id:"offer",en:"Special Offer",ur:"اسپیشل آفر",items:[["Mini Zinger Burger","🍔",S(250)],["Mini Beef Burger","🍔",S(250)],["Mini Chicken Burger","🍔",S(250)]]},
  {id:"burger",en:"Burger",ur:"برگر",items:[["Zinger Burger","🍔",S(350),"🥤 300ml Cold Drink Free"],["Zinger Cheese Burger","🧀",S(450),"🥤 300ml Cold Drink Free"],["Zinger Jumbo Burger","🍔",S(600),"🥤 300ml Cold Drink Free"],["Full Anda Burger","🍳",S(150)]]},
  {id:"roll",en:"Roll",ur:"رول",items:[["Kabab Roll","🌯",S(80)],["Kabab Mayo Roll","🌯",S(120)],["Chicken Mayo Roll","🌯",S(180)],["Chicken Roll","🌯",S(150)],["Malai Boti Roll","🌯",S(250)],["Zinger Roll","🌯",S(300)],["Zinger Shawarma","🥙",S(280)],["Shawarma","🥙",S(150)]]},
  {id:"fries",en:"Fries",ur:"فرائز",items:[["Normal Fries","🍟",S(100)],["Mayo Fries","🍟",S(150)],["Mayo Garlic Fries","🧄",S(180)],["Pizza Fries","🍕",S(350)],["Cheese Fries","🧀",S(300)]]},
@@ -160,9 +161,10 @@ var CATS = [
  {id:"broast",en:"Broast",ur:"بروسٹ",items:[["Half Quarter Broast Chest","🍗",S(400)],["Quarter Broast Chest","🍗",S(700)],["Quarter Broast Leg","🍗",S(700)]]},
  {id:"bbq",en:"BBQ",ur:"باربی کیو",items:[["Seekh Boti","🍢",HF(200,400)],["Tikka Malai","🍖",S(450)],["Malai Boti","🍢",HF(250,500)],["Seekh Kabab","🍢",HF(100,200)],["Tikka Chest","🍗",S(400)]]},
  {id:"beverage",en:"Beverage",ur:"بیوریج",items:[["Sting","⚡",[["Regular",70],["300ml",100],["500ml",130]]],["Cold Drink","🥤",[["Regular",50],["300ml",70],["Half Liter",110],["1 Liter",160],["1.5 Liter",200],["Jumbo",280]]],["Mineral Water","💧",[["Small",60],["Big",120]]],["Can","🥫",S(120)],["Slice","🧃",S(60)],["Juice","🧃",S(50)]]},
- {id:"icecream",en:"Ice Cream",ur:"آئس کریم",items:[["Single Qulfa","🍧",[["Single",180],["Half",500],["Full",1000]]],FL("🍨","Pista Ice Cream"),FL("🍓","Tutti Fruity Ice Cream"),FL("🥭","Mango Ice Cream"),FL("🍫","Chocolate Ice Cream"),FL("🍦","Peshawari Ice Cream"),["Falooda","🍹",S(300)],["Doodh Ki Bottle","🥛",S(100)]]}
+ {id:"icecream",en:"Ice Cream",ur:"آئس کریم",items:[["Single Qulfa","🍧",[["Single",180],["Half",500],["Full",1000]]],FL("🍨","Pista Ice Cream"),FL("🍓","Tutti Fruity Ice Cream"),FL("🥭","Mango Ice Cream"),FL("🍫","Chocolate Ice Cream"),FL("🍦","Peshawari Ice Cream"),["Falooda","🍹",S(300)],["Doodh Ki Bottle","🥛",S(150)]]}
 ];
 var FOOD_IMG = {
+ offer:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=360&q=80",
  burger:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=360&q=80",
  roll:"https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=360&q=80",
  fries:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=360&q=80",
@@ -172,8 +174,10 @@ var FOOD_IMG = {
  beverage:"https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=360&q=80",
  icecream:"https://images.unsplash.com/photo-1560008581-09826d1de69e?auto=format&fit=crop&w=360&q=80"
 };
-var OOS={icecream:true}; // categories marked Out Of Stock (remove "icecream:true" to put them back)
-var ICON={burger:"🍔",roll:"🌯",fries:"🍟",sandwich:"🥪",broast:"🍗",bbq:"🍢",beverage:"🥤",icecream:"🍨"};
+var OOS={icecream:true};
+var OOS_EXCEPT={"Doodh Ki Bottle":true}; // items that stay available even if their category is Out Of Stock
+function isOOS(c,d){return OOS[c.id]&&!OOS_EXCEPT[d[0]];} // categories marked Out Of Stock (remove "icecream:true" to put them back)
+var ICON={offer:"🔥",burger:"🍔",roll:"🌯",fries:"🍟",sandwich:"🥪",broast:"🍗",bbq:"🍢",beverage:"🥤",icecream:"🍨"};
 var WA_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0 1 12 4z"/></svg>';
 document.getElementById("qwa").href="https://wa.me/"+PHONE;
 function link(n,o){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent("Assalam o Alaikum! I'd like to order: "+n+(o[0]?" ("+o[0]+")":"")+" - Rs "+o[1]);}
@@ -184,9 +188,9 @@ CATS.forEach(function(c){
  c.items.forEach(function(d){
   var id=ALL.push(d)-1,o=d[2];
   var image=FOOD_IMG[c.id]||"";
-  html+='<div class="dish" data-id="'+id+'" data-n="'+d[0].toLowerCase()+'"><div class="top"><div class="thumb"><img src="'+image+'" alt="'+d[0]+'" loading="lazy" onerror="this.style.display=\'none\';this.parentNode.textContent=\''+ICON[c.id]+'\'"></div><div class="info"><div class="row"><span class="name">'+d[0]+'</span><span class="price'+(OOS[c.id]?' oos">Out Of Stock':'">Rs '+o[0][1])+'</span></div>'+(d[3]?'<div class="free">'+d[3]+'</div>':'')+'</div></div>';
-  if(o.length>1&&!OOS[c.id]){html+='<div class="chips">'+o.map(function(x,k){return '<button class="chip'+(k?'':' on')+'" data-k="'+k+'">'+x[0]+' · '+x[1]+'</button>';}).join("")+'</div>';}
-  if(OOS[c.id]){html+='<div class="acts"><span class="wa dis">Out Of Stock</span></div></div>';return;}
+  html+='<div class="dish" data-id="'+id+'" data-n="'+d[0].toLowerCase()+'"><div class="top"><div class="thumb"><img src="'+image+'" alt="'+d[0]+'" loading="lazy" onerror="this.style.display=\'none\';this.parentNode.textContent=\''+ICON[c.id]+'\'"></div><div class="info"><div class="row"><span class="name">'+d[0]+'</span><span class="price'+(isOOS(c,d)?' oos">Out Of Stock':'">Rs '+o[0][1])+'</span></div>'+(d[3]?'<div class="free">'+d[3]+'</div>':'')+'</div></div>';
+  if(o.length>1&&!isOOS(c,d)){html+='<div class="chips">'+o.map(function(x,k){return '<button class="chip'+(k?'':' on')+'" data-k="'+k+'">'+x[0]+' · '+x[1]+'</button>';}).join("")+'</div>';}
+  if(isOOS(c,d)){html+='<div class="acts"><span class="wa dis">Out Of Stock</span></div></div>';return;}
   html+='<div class="acts"><a class="wa" href="'+link(d[0],o[0])+'" target="_blank" rel="noopener">'+WA_ICON+'Order on WhatsApp</a><button class="add">＋ Add</button></div></div>';
  });
  html+='</section>';
