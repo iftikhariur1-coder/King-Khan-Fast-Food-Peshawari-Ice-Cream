@@ -155,7 +155,8 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 1
 </div></div>
 
 <script>
-var PHONE = "923442285036";var S=function(p){return [["",p]]}, HF=function(h,f){return [["Half",h],["Full",f]]};
+var PHONE = "923442285036";
+var GREET = "اسلام وعلیکم، مجھے یہ آئٹم آرڈر کرنا ہے۔ اگر ڈلیوری دستیاب ہے تو میں اپنی لوکیشن سینڈ کر دوں؟";var S=function(p){return [["",p]]}, HF=function(h,f){return [["Half",h],["Full",f]]};
 var FL=function(e,n){return [n,e,[["Single",150],["Half",400],["Full",800]]]};
 var CATS = [
  {id:"offer",en:"Special Offer",ur:"اسپیشل آفر",items:[["Mini Zinger Burger","🍔",S(250)],["Mini Beef Burger","🍔",S(250)],["Mini Chicken Burger","🍔",S(250)]]},
@@ -188,7 +189,7 @@ function imgFail(el,icon){var a=el.dataset.alt?el.dataset.alt.split("|"):[];if(a
 var ICON={offer:"🔥",burger:"🍔",roll:"🌯",fries:"🍟",sandwich:"🥪",broast:"🍗",bbq:"🍢",beverage:"🥤",icecream:"🍨"};
 var WA_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0 1 12 4z"/></svg>';
 document.getElementById("qwa").href="https://wa.me/"+PHONE;
-function link(n,o){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent("Assalam o Alaikum! I'd like to order: "+n+(o[0]?" ("+o[0]+")":"")+" - Rs "+o[1]);}
+function link(n,o){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(GREET+"\n\n"+n+(o[0]?" ("+o[0]+")":"")+" - Rs "+o[1]);}
 var ALL=[],nav="",html="";
 CATS.forEach(function(c){
  nav+='<a href="#'+c.id+'">'+ICON[c.id]+' '+c.en+'</a>';
@@ -227,7 +228,7 @@ function renderCart(){
  document.getElementById("citems").innerHTML=h;document.getElementById("ccount").textContent=n;
  document.getElementById("ctotal").textContent="Rs "+t;document.getElementById("stotal").textContent="Rs "+t;
  document.getElementById("cbar").style.display=n?"block":"none";if(!n)document.getElementById("ov").classList.remove("open");
- var m="Assalam o Alaikum! I'd like to order:\n";
+ var m=GREET+"\n\n";
  CART.forEach(function(c,i){m+=(i+1)+". "+c.n+(c.l?" ("+c.l+")":"")+" x "+c.q+" - Rs "+(c.q*c.p)+"\n";});
  m+="\nTotal: Rs "+t;document.getElementById("cwa").href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(m);saveCart();
 }
