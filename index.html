@@ -6,11 +6,14 @@
 <meta name="theme-color" content="#111111">
 <title>King Khan Fast Food &amp; Peshawari Ice Cream</title>
 <style>
-:root{--bg:#2a0f0b;--panel:#3b1a13;--panel2:#4a2419;--ink:#fff6ea;--muted:#d9bfa8;--red:#c1121f;--gold:#f5b942;--line:#6a3a28;--green:#168b52;--mapbg:#e8e4d9;--park:#b8d5a2;--water:#b3d8e7;--road:#fff}
+:root{--bg:#1a0e08;--panel:#2c1a0e;--panel2:#3a2412;--ink:#fff6ea;--muted:#dcc7a4;--red:#c1121f;--gold:#f5b942;--line:#6b4a1e;--green:#168b52;--mapbg:#e8e4d9;--park:#b8d5a2;--water:#b3d8e7;--road:#fff}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:125px}
-body{margin:0;background:linear-gradient(180deg,#3d1511 0,#2a0f0b 45%,#210a07 100%) var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.45}
+body{margin:0;background:linear-gradient(180deg,#26140a 0,#1a0e08 50%,#150a05 100%) var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.45}
 a{color:inherit;text-decoration:none}
+body::before{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;will-change:transform;background:radial-gradient(40% 30% at 20% 15%,rgba(245,185,66,.32),transparent 70%),radial-gradient(35% 28% at 85% 32%,rgba(255,140,40,.22),transparent 70%),radial-gradient(45% 35% at 30% 72%,rgba(193,18,31,.20),transparent 70%),radial-gradient(40% 30% at 90% 90%,rgba(245,185,66,.26),transparent 70%);animation:smoke 26s ease-in-out infinite alternate}
+@keyframes smoke{from{transform:translate3d(-3%,-2%,0) scale(1)}to{transform:translate3d(3%,3%,0) scale(1.12)}}
+@media (prefers-reduced-motion:reduce){body::before{animation:none}}
 .cover{background:#000;border-bottom:3px solid var(--gold)}.cover img{display:block;width:100%;max-width:1100px;height:auto;margin:0 auto}
 header{padding:14px 16px 6px;text-align:center}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -18,11 +21,11 @@ h1{margin:0;font-size:clamp(2rem,8vw,3.7rem);font-weight:900;letter-spacing:2px;
 h1 span:first-child{color:var(--gold)}h1 span:last-child{color:#fff}
 .sub{margin-top:10px;font-size:clamp(.78rem,2.8vw,1rem);font-weight:800;letter-spacing:2px;color:#eee}
 .tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:15px}
-.tags span{background:#4e2518;border:1px solid #7a4a2c;border-radius:99px;padding:6px 11px;font-size:.78rem;color:#f8e8c7}
+.tags span{background:#3a2a12;border:1px solid #8a6420;border-radius:99px;padding:6px 11px;font-size:.78rem;color:#f8e8c7}
 .qa{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px max(12px,calc((100% - 900px)/2))}
 .qa a{display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 6px;border:1px solid var(--line);border-radius:10px;background:var(--panel);font-weight:700;font-size:.88rem}
 .qa a:first-child{border-color:#5b2c2f}.qa b{font-size:1.1rem}
-.bar{position:sticky;top:0;z-index:10;background:rgba(42,15,11,.94);backdrop-filter:blur(10px);padding:12px max(12px,calc((100% - 900px)/2));border-bottom:1px solid var(--line)}
+.bar{position:sticky;top:0;z-index:10;background:rgba(26,14,8,.92);backdrop-filter:blur(10px);padding:12px max(12px,calc((100% - 900px)/2));border-bottom:1px solid var(--line)}
 .search{display:flex;align-items:center;gap:9px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:0 13px}
 .search span{font-size:1.1rem}.search input{width:100%;border:0;outline:0;background:transparent;color:var(--ink);padding:13px 0;font-size:1rem}
 nav{display:flex;gap:8px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:thin}
@@ -33,10 +36,10 @@ section[id]{scroll-margin-top:150px}
 main section{margin:16px 0 24px}
 main section h2{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:0 2px 10px;margin:0 0 12px;font-size:1.25rem}
 main section h2 small{display:block;color:var(--muted);font-size:.8rem;font-weight:400;margin-top:2px}
-main section h2 em{font-style:normal;font-size:.72rem;font-weight:700;color:var(--gold);background:#4f2c12;border-radius:99px;padding:5px 9px;white-space:nowrap}
+main section h2 em{font-style:normal;font-size:.72rem;font-weight:700;color:var(--gold);background:#4a3512;border-radius:99px;padding:5px 9px;white-space:nowrap}
 .dish{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:12px;margin:10px 0;overflow:hidden}
 .top{display:flex;align-items:center;gap:12px}
-.thumb{width:92px;height:82px;flex:0 0 92px;border-radius:11px;overflow:hidden;background:#4a2a1e;display:flex;align-items:center;justify-content:center}
+.thumb{width:92px;height:82px;flex:0 0 92px;border-radius:11px;overflow:hidden;background:#3a2a14;display:flex;align-items:center;justify-content:center}
 .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .info{min-width:0;flex:1}
 .row{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
@@ -46,7 +49,7 @@ main section h2 em{font-style:normal;font-size:.72rem;font-weight:700;color:var(
 .price.oos{color:#ff8a90;font-size:.82rem}
 .wa.dis{background:#3a3a3a;color:#b5b5b5;box-shadow:none;pointer-events:none}
 .chips{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 2px}
-.chip{border:1px solid #7a4a2c;background:#4a2419;color:var(--ink);border-radius:99px;padding:7px 10px;font-size:.8rem;font-weight:700;cursor:pointer}
+.chip{border:1px solid #7a5a22;background:#3a2412;color:var(--ink);border-radius:99px;padding:7px 10px;font-size:.8rem;font-weight:700;cursor:pointer}
 .chip.on{background:#6b4a14;border-color:var(--gold);color:#ffe0a0}
 .acts{display:flex;gap:8px;margin-top:12px}
 .acts .wa{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;background:var(--green);border-radius:9px;padding:10px 8px;font-size:.83rem;font-weight:800}
@@ -60,18 +63,19 @@ main section h2 em{font-style:normal;font-size:.72rem;font-weight:700;color:var(
 .lb{padding:16px}.lb h3{margin:0 0 7px;font-size:1.2rem}.lb p{color:#ddd;margin:0 0 10px}
 .code{display:inline-block;color:var(--gold);font-size:.85rem;margin-bottom:14px}
 .btns{display:flex;gap:8px;flex-wrap:wrap}.btns a{background:var(--red);border-radius:9px;padding:10px 13px;font-weight:800;font-size:.85rem}.btns a.alt{background:#333;border:1px solid #555}
+.vis{display:inline-block;margin-top:12px;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:6px 16px;font-weight:700;color:var(--ink)}.vis[hidden]{display:none}.vis b{color:var(--gold);font-size:1.05rem;letter-spacing:.5px}
 footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 100px;border-top:1px solid var(--line)}
-.cbar{display:none;position:fixed;z-index:20;bottom:0;left:0;right:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(42,15,11,.94);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
+.cbar{display:none;position:fixed;z-index:20;bottom:0;left:0;right:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(26,14,8,.92);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
 .cbar button{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:876px;margin:auto;border:0;border-radius:12px;padding:14px 17px;background:var(--red);color:#fff;font-size:1rem;font-weight:900;cursor:pointer}
 #ccount{font-style:normal;display:inline-grid;place-items:center;min-width:23px;height:23px;border-radius:50%;background:#fff;color:var(--red);margin-right:7px;font-size:.8rem}
 .ov{display:none;position:fixed;inset:0;z-index:30;background:#000b;align-items:flex-end;justify-content:center}
 .ov.open{display:flex}
-.sheet{width:100%;max-width:620px;max-height:85dvh;overflow:auto;background:#33150f;border:1px solid #6a3a28;border-radius:20px 20px 0 0;padding:17px 16px calc(18px + env(safe-area-inset-bottom))}
+.sheet{width:100%;max-width:620px;max-height:85dvh;overflow:auto;background:#2a190c;border:1px solid #6b4a1e;border-radius:20px 20px 0 0;padding:17px 16px calc(18px + env(safe-area-inset-bottom))}
 .sh{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px}
 .sh h3{margin:0;font-size:1.25rem}.x{background:#333;color:#fff;border:0;border-radius:50%;width:35px;height:35px;font-size:1.4rem;cursor:pointer}
 .ci{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
 .ci .t{font-weight:800}.ci small{display:block;color:var(--muted);font-weight:400;font-size:.8rem}
-.qty{display:flex;align-items:center;gap:9px}.qty button{width:29px;height:29px;border:1px solid #7a4a2c;border-radius:8px;background:#4a2419;color:#fff;font-size:1rem}
+.qty{display:flex;align-items:center;gap:9px}.qty button{width:29px;height:29px;border:1px solid #7a5a22;border-radius:8px;background:#3a2412;color:#fff;font-size:1rem}
 .ci .p{color:var(--gold);font-weight:800;white-space:nowrap}
 .tot{display:flex;justify-content:space-between;font-size:1.15rem;font-weight:900;padding:16px 0}
 .tot span:last-child{color:var(--gold)}
@@ -138,7 +142,8 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 1
   <button class="rsend" id="rsend" type="button">Send Feedback on WhatsApp</button>
   <small id="rnote">Your rating and message are sent straight to the shop on WhatsApp.</small>
 </section>
-<footer>Tap “Order on WhatsApp” on any dish to order.<br>📞 0344 2285036<br>© King Khan Fast Food &amp; Peshawari Ice Cream</footer>
+<footer>Tap “Order on WhatsApp” on any dish to order.<br>📞 0344 2285036<br>© King Khan Fast Food &amp; Peshawari Ice Cream
+  <div class="vis" id="vis" hidden>👁 Total visitors: <b id="visn">0</b></div></footer>
 
 <div class="cbar" id="cbar"><button id="copen"><span><i id="ccount">0</i>View cart</span><span id="ctotal">Rs 0</span></button></div>
 <div class="ov" id="ov"><div class="sheet" role="dialog" aria-label="Your order">
@@ -168,7 +173,7 @@ var FOOD_IMG = {
  burger:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=360&q=80",
  roll:"https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=360&q=80",
  fries:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=360&q=80",
- sandwich:"https://images.unsplash.com/photo-1553909489-cd47e0ef937f?auto=format&fit=crop&w=360&q=80",
+ sandwich:"https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=360&q=80",
  broast:"https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=360&q=80",
  bbq:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=360&q=80",
  beverage:"https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=360&q=80",
@@ -177,6 +182,9 @@ var FOOD_IMG = {
 var OOS={icecream:true};
 var OOS_EXCEPT={"Doodh Ki Bottle":true}; // items that stay available even if their category is Out Of Stock
 function isOOS(c,d){return OOS[c.id]&&!OOS_EXCEPT[d[0]];} // categories marked Out Of Stock (remove "icecream:true" to put them back)
+var SAND_SVG="data:image/svg+xml;utf8,"+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 92 82'><defs><radialGradient id='g' cx='50%' cy='35%' r='80%'><stop offset='0' stop-color='#6b4a1e'/><stop offset='1' stop-color='#2a170b'/></radialGradient></defs><rect width='92' height='82' fill='url(#g)'/><ellipse cx='46' cy='72' rx='34' ry='5' fill='#000' opacity='.35'/><rect x='14' y='59' width='64' height='11' rx='5.5' fill='#e0a24f'/><path d='M11 59q5.7-7 11.5 0t11.5 0 11.5 0 11.5 0 11.5 0 11.5 0v-4H11z' fill='#5fb54a'/><rect x='13' y='47' width='66' height='8' rx='4' fill='#b0703a'/><rect x='11' y='43' width='70' height='5' rx='1' fill='#ffcc3d'/><rect x='14' y='35' width='64' height='9' rx='4.5' fill='#e0a24f'/><rect x='13' y='29' width='66' height='7' rx='3.5' fill='#d93a2b'/><path d='M15 30Q15 11 46 11T77 30z' fill='#eab45f'/><ellipse cx='36' cy='19' rx='9' ry='3.5' fill='#f6d08a' opacity='.7'/><path d='M46 5V32' stroke='#d8c79a' stroke-width='1.8'/><circle cx='46' cy='6' r='3.2' fill='#c1121f'/></svg>");
+var FOOD_ALT={sandwich:["https://images.unsplash.com/photo-1539252554453-80ab65ce3586?auto=format&fit=crop&w=360&q=80","https://images.unsplash.com/photo-1567234669003-dce7a7a88821?auto=format&fit=crop&w=360&q=80",SAND_SVG]};
+function imgFail(el,icon){var a=el.dataset.alt?el.dataset.alt.split("|"):[];if(a.length){var n=a.shift();el.dataset.alt=a.join("|");el.src=n;}else{el.onerror=null;el.style.display="none";el.parentNode.textContent=icon;}}
 var ICON={offer:"🔥",burger:"🍔",roll:"🌯",fries:"🍟",sandwich:"🥪",broast:"🍗",bbq:"🍢",beverage:"🥤",icecream:"🍨"};
 var WA_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0 1 12 4z"/></svg>';
 document.getElementById("qwa").href="https://wa.me/"+PHONE;
@@ -188,7 +196,7 @@ CATS.forEach(function(c){
  c.items.forEach(function(d){
   var id=ALL.push(d)-1,o=d[2];
   var image=FOOD_IMG[c.id]||"";
-  html+='<div class="dish" data-id="'+id+'" data-n="'+d[0].toLowerCase()+'"><div class="top"><div class="thumb"><img src="'+image+'" alt="'+d[0]+'" loading="lazy" onerror="this.style.display=\'none\';this.parentNode.textContent=\''+ICON[c.id]+'\'"></div><div class="info"><div class="row"><span class="name">'+d[0]+'</span><span class="price'+(isOOS(c,d)?' oos">Out Of Stock':'">Rs '+o[0][1])+'</span></div>'+(d[3]?'<div class="free">'+d[3]+'</div>':'')+'</div></div>';
+  html+='<div class="dish" data-id="'+id+'" data-n="'+d[0].toLowerCase()+'"><div class="top"><div class="thumb"><img src="'+image+'" alt="'+d[0]+'" loading="lazy" data-alt="'+(FOOD_ALT[c.id]||[]).join('|')+'" onerror="imgFail(this,\''+ICON[c.id]+'\')"></div><div class="info"><div class="row"><span class="name">'+d[0]+'</span><span class="price'+(isOOS(c,d)?' oos">Out Of Stock':'">Rs '+o[0][1])+'</span></div>'+(d[3]?'<div class="free">'+d[3]+'</div>':'')+'</div></div>';
   if(o.length>1&&!isOOS(c,d)){html+='<div class="chips">'+o.map(function(x,k){return '<button class="chip'+(k?'':' on')+'" data-k="'+k+'">'+x[0]+' · '+x[1]+'</button>';}).join("")+'</div>';}
   if(isOOS(c,d)){html+='<div class="acts"><span class="wa dis">Out Of Stock</span></div></div>';return;}
   html+='<div class="acts"><a class="wa" href="'+link(d[0],o[0])+'" target="_blank" rel="noopener">'+WA_ICON+'Order on WhatsApp</a><button class="add">＋ Add</button></div></div>';
@@ -265,6 +273,23 @@ renderCart();
   if(msg)m+="Message: "+msg;
   window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(m),"_blank");
  };
+})();
+// ---- Visitor counter (counts each browser once; needs internet) ----
+(function(){
+ var NS="kingkhan-fastfood-karachi",KEY="visitors",seen=false;
+ try{seen=localStorage.getItem("kk_visited")==="1";}catch(e){}
+ function show(n){
+  n=parseInt(n,10); if(isNaN(n))return false;
+  document.getElementById("visn").textContent=n.toLocaleString("en-US");
+  document.getElementById("vis").hidden=false; return true;
+ }
+ function done(){try{localStorage.setItem("kk_visited","1");}catch(e){}}
+ function get(url,pick){return fetch(url).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){if(!show(pick(j)))throw 0;});}
+ var A="https://api.counterapi.dev/v1/"+NS+"/"+KEY+"/"+(seen?"":"up"),
+     B="https://abacus.jasoncameron.dev/"+(seen?"get/":"hit/")+NS+"/"+KEY;
+ get(A,function(j){return j.count;}).then(done).catch(function(){
+  return get(B,function(j){return j.value;}).then(done);
+ }).catch(function(){});
 })();
 </script>
 </body>
