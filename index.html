@@ -3,9 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#111111">
-  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1a0e08">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="King Khan">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#111111">
 <title>King Khan Fast Food &amp; Peshawari Ice Cream</title>
 <style>
 :root{--bg:#1a0e08;--panel:#2c1a0e;--panel2:#3a2412;--ink:#fff6ea;--muted:#dcc7a4;--red:#c1121f;--gold:#f5b942;--line:#6b4a1e;--green:#168b52;--mapbg:#e8e4d9;--park:#b8d5a2;--water:#b3d8e7;--road:#fff}
@@ -65,7 +71,8 @@ main section h2 em{font-style:normal;font-size:.72rem;font-weight:700;color:var(
 .lb{padding:16px}.lb h3{margin:0 0 7px;font-size:1.2rem}.lb p{color:#ddd;margin:0 0 10px}
 .code{display:inline-block;color:var(--gold);font-size:.85rem;margin-bottom:14px}
 .btns{display:flex;gap:8px;flex-wrap:wrap}.btns a{background:var(--red);border-radius:9px;padding:10px 13px;font-weight:800;font-size:.85rem}.btns a.alt{background:#333;border:1px solid #555}
-.vis{display:inline-block;margin-top:12px;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:6px 16px;font-weight:700;color:var(--ink)}.vis[hidden]{display:none}.vis b{color:var(--gold);font-size:1.05rem;letter-spacing:.5px}
+.vis{display:inline-block;margin-top:12px;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:6px 16px;font-weight:700;color:var(--ink)}.inst{margin-top:12px;font:inherit;font-weight:800;color:#2a1600;background:linear-gradient(135deg,#fbd56a,#e8a317);border:0;border-radius:99px;padding:10px 20px;box-shadow:0 6px 16px rgba(232,163,23,.35)}.inst[hidden]{display:none}
+.vis[hidden]{display:none}.vis b{color:var(--gold);font-size:1.05rem;letter-spacing:.5px}
 footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 100px;border-top:1px solid var(--line)}
 .cbar{display:none;position:fixed;z-index:20;bottom:0;left:0;right:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(26,14,8,.92);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
 .cbar button{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:876px;margin:auto;border:0;border-radius:12px;padding:14px 17px;background:var(--red);color:#fff;font-size:1rem;font-weight:900;cursor:pointer}
@@ -145,6 +152,7 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 1
   <small id="rnote">Your rating and message are sent straight to the shop on WhatsApp.</small>
 </section>
 <footer>Tap “Order on WhatsApp” on any dish to order.<br>📞 0344 2285036<br>© King Khan Fast Food &amp; Peshawari Ice Cream
+  <div><button class="inst" id="inst" type="button" hidden>📲 Install App</button></div>
   <div class="vis" id="vis" hidden>👁 Total visitors: <b id="visn">0</b></div></footer>
 
 <div class="cbar" id="cbar"><button id="copen"><span><i id="ccount">0</i>View cart</span><span id="ctotal">Rs 0</span></button></div>
@@ -161,7 +169,7 @@ var PHONE = "923442285036";
 var GREET = "اسلام وعلیکم، مجھے یہ آئٹم آرڈر کرنا ہے۔ اگر ڈلیوری دستیاب ہے تو میں اپنی لوکیشن سینڈ کر دوں؟";var S=function(p){return [["",p]]}, HF=function(h,f){return [["Half",h],["Full",f]]};
 var FL=function(e,n){return [n,e,[["Single",150],["Half",400],["Full",800]]]};
 var CATS = [
- {id:"offer",en:"Special Offer",ur:"اسپیشل آفر",items:[["Mini Zinger Burger","🍔",S(260)],["Mini Beef Burger","🍔",S(250)],["Mini Chicken Burger","🍔",S(250)]]},
+ {id:"offer",en:"Special Offer",ur:"اسپیشل آفر",items:[["Mini Zinger Burger","🍔",S(250)],["Mini Beef Burger","🍔",S(250)],["Mini Chicken Burger","🍔",S(250)]]},
  {id:"burger",en:"Burger",ur:"برگر",items:[["Zinger Burger","🍔",S(350)],["Zinger Cheese Burger","🧀",S(450)],["Zinger Jumbo Burger","🍔",S(600)],["Full Anda Burger","🍳",S(150)]]},
  {id:"roll",en:"Roll",ur:"رول",items:[["Kabab Roll","🌯",S(80)],["Kabab Mayo Roll","🌯",S(120)],["Chicken Mayo Roll","🌯",S(180)],["Chicken Roll","🌯",S(150)],["Malai Boti Roll","🌯",S(250)],["Zinger Roll","🌯",S(300)],["Zinger Shawarma","🥙",S(280)],["Shawarma","🥙",S(150)]]},
  {id:"fries",en:"Fries",ur:"فرائز",items:[["Normal Fries","🍟",S(100)],["Mayo Fries","🍟",S(150)],["Mayo Garlic Fries","🧄",S(180)],["Pizza Fries","🍕",S(350)],["Cheese Fries","🧀",S(300)]]},
@@ -293,6 +301,25 @@ renderCart();
  get(A,function(j){return j.count;}).then(done).catch(function(){
   return get(B,function(j){return j.value;}).then(done);
  }).catch(function(){});
+})();
+// ---- App install (PWA) + automatic updates ----
+(function(){
+ if("serviceWorker" in navigator){
+  var hadCtrl=!!navigator.serviceWorker.controller,reloaded=false;
+  navigator.serviceWorker.addEventListener("controllerchange",function(){
+   if(!hadCtrl||reloaded)return; reloaded=true; location.reload(); // new version took over -> show it
+  });
+  window.addEventListener("load",function(){
+   navigator.serviceWorker.register("/service-worker.js",{scope:"/",updateViaCache:"none"}).then(function(reg){
+    reg.update();
+    document.addEventListener("visibilitychange",function(){if(!document.hidden)reg.update();});
+   }).catch(function(){});
+  });
+ }
+ var ev=null,b=document.getElementById("inst");
+ window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();ev=e;b.hidden=false;});
+ b.onclick=function(){if(!ev)return;ev.prompt();ev.userChoice.finally(function(){ev=null;b.hidden=true;});};
+ window.addEventListener("appinstalled",function(){b.hidden=true;});
 })();
 </script>
 </body>
