@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "King Khan Fast Food",
+  "short_name": "King Khan",
+  "description": "Menu and WhatsApp ordering – King Khan Fast Food & Peshawari Ice Cream, Ittehad Town, Karachi",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#1a0e08",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["food"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
