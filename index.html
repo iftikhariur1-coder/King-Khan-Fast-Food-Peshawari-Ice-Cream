@@ -75,9 +75,22 @@ main section h2 em{font-style:normal;font-size:.72rem;font-weight:700;color:var(
 .dev{max-width:440px;margin:24px auto 0;text-align:center;border:1px solid #8a6420;border-radius:18px;padding:16px 14px;background:linear-gradient(160deg,rgba(245,185,66,.16),rgba(193,18,31,.12));color:var(--ink)}
 .dev-t{font-weight:900;font-size:1.02rem;color:var(--gold);line-height:1.7;direction:rtl}
 .dev p{margin:8px 0 0;font-size:.82rem;line-height:1.6;color:var(--muted)}.dev p.ur{direction:rtl;color:var(--ink);font-weight:600}
-.dev-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.dev-btns{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}
 .dev-btns a{display:block;text-decoration:none;font-weight:800;font-size:.92rem;border-radius:12px;padding:11px 6px;color:#2a1600;background:linear-gradient(135deg,#fbd56a,#e8a317)}
 .dev-btns a.w{color:#fff;background:linear-gradient(135deg,#25d366,#128c4a)}
+.deal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(12,6,3,.8);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);cursor:pointer;animation:dfade .25s ease-out}
+.deal-card{position:relative;width:100%;max-width:340px;text-align:center;direction:rtl;border-radius:24px;padding:26px 18px 20px;color:#fff;border:2px solid var(--gold);background:radial-gradient(circle at 50% 0%,#e0242f 0,#9b0e16 55%,#43050a 100%);box-shadow:0 0 0 5px rgba(245,185,66,.22),0 20px 60px rgba(0,0,0,.7),0 0 50px rgba(245,185,66,.25);animation:dpop .45s cubic-bezier(.2,1.4,.4,1)}
+.deal-x{position:absolute;top:8px;left:8px;width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:rgba(0,0,0,.35);color:#fff;font:inherit;font-size:20px;line-height:1;cursor:pointer}
+.deal-boom{font-size:54px;line-height:1;animation:dbeat 1.2s ease-in-out infinite}
+.deal-t{margin:6px 0 2px;font-size:2.1rem;font-weight:900;line-height:1.4;background:linear-gradient(#fff6bd,#f7c93a 50%,#d58a0a);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 0 #5a0a0e)}
+.deal-l{font-size:1.1rem;font-weight:700;line-height:1.8}
+.deal-l b{color:var(--gold2,#fbd56a);font-size:1.5rem}
+.deal-f{display:inline-block;margin-top:8px;background:linear-gradient(135deg,#fbd56a,#e8a317);color:#3a1d00;font-weight:900;font-size:1.15rem;border-radius:14px;padding:8px 16px;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+.deal-h{margin-top:14px;font-size:.78rem;color:rgba(255,255,255,.7)}
+@keyframes dfade{from{opacity:0}}
+@keyframes dpop{from{opacity:0;transform:scale(.6)}}
+@keyframes dbeat{50%{transform:scale(1.15) rotate(-4deg)}}
+@media (prefers-reduced-motion:reduce){.deal,.deal-card,.deal-boom{animation:none}}
 .vis[hidden]{display:none}.vis b{color:var(--gold);font-size:1.05rem;letter-spacing:.5px}
 footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 100px;border-top:1px solid var(--line)}
 .cbar{display:none;position:fixed;z-index:20;bottom:0;left:0;right:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(26,14,8,.92);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
@@ -164,7 +177,7 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 1
     <div class="dev-t">✨ ایسی ہی شاندار ویب سائٹ آپ کے کاروبار کے لیے بھی!</div>
     <p>Want a professional website or an installable mobile app for your restaurant or business? Menu pages, WhatsApp ordering, location map and more – built just like this one.</p>
     <p class="ur">اپنے کاروبار کو آن لائن لائیں اور زیادہ گاہک حاصل کریں۔ ایسی ویب سائٹ بنوانے کے لیے آج ہی رابطہ کریں:</p>
-    <div class="dev-btns"><a href="tel:03115460052">📞 0311 5460052</a><a class="w" href="https://wa.me/923115460052?text=%D8%A7%D8%B3%D9%84%D8%A7%D9%85%20%D9%88%D8%B9%D9%84%DB%8C%DA%A9%D9%85%D8%8C%20%D9%85%D8%AC%DA%BE%DB%92%20%D8%A7%D9%BE%D9%86%DB%92%20%DA%A9%D8%A7%D8%B1%D9%88%D8%A8%D8%A7%D8%B1%20%DA%A9%DB%92%20%D9%84%DB%8C%DB%92%20%D9%88%DB%8C%D8%A8%20%D8%B3%D8%A7%D8%A6%D9%B9%20%2F%20%D9%85%D9%88%D8%A8%D8%A7%D8%A6%D9%84%20%D8%A7%DB%8C%D9%BE%20%D8%A8%D9%86%D9%88%D8%A7%D9%86%DB%8C%20%DB%81%DB%92%DB%94" target="_blank" rel="noopener">💬 WhatsApp</a></div>
+    <div class="dev-btns"><a class="w" href="https://wa.me/923115460052?text=%D8%A7%D8%B3%D9%84%D8%A7%D9%85%20%D9%88%D8%B9%D9%84%DB%8C%DA%A9%D9%85%D8%8C%20%D9%85%D8%AC%DA%BE%DB%92%20%D8%A7%D9%BE%D9%86%DB%92%20%DA%A9%D8%A7%D8%B1%D9%88%D8%A8%D8%A7%D8%B1%20%DA%A9%DB%92%20%D9%84%DB%8C%DB%92%20%D9%88%DB%8C%D8%A8%20%D8%B3%D8%A7%D8%A6%D9%B9%20%2F%20%D9%85%D9%88%D8%A8%D8%A7%D8%A6%D9%84%20%D8%A7%DB%8C%D9%BE%20%D8%A8%D9%86%D9%88%D8%A7%D9%86%DB%8C%20%DB%81%DB%92%DB%94" target="_blank" rel="noopener">💬 WhatsApp: 0311 5460052</a></div>
   </div></footer>
 
 <div class="cbar" id="cbar"><button id="copen"><span><i id="ccount">0</i>View cart</span><span id="ctotal">Rs 0</span></button></div>
@@ -176,6 +189,17 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 1
   <button class="cl" id="cclear">Clear cart</button>
 </div></div>
 
+<div class="deal" id="deal" role="dialog" aria-modal="true" aria-label="دھماکا ڈیل" onclick="this.remove()">
+  <div class="deal-card">
+    <button class="deal-x" type="button" aria-label="Close" onclick="document.getElementById('deal').remove()">×</button>
+    <div class="deal-boom">💥</div>
+    <div class="deal-t">دھماکا ڈیل</div>
+    <div class="deal-l"><b>1000</b> روپے کے آرڈر پر</div>
+    <div class="deal-f">🥤 300ml کولڈرنک فری</div>
+    <div class="deal-h">مینو دیکھنے کے لیے کہیں بھی ٹیپ کریں</div>
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){var d=document.getElementById("deal");if(d&&e.key==="Escape")d.remove();});</script>
 <script>
 var PHONE = "923442285036";
 var GREET = "اسلام وعلیکم، مجھے یہ آئٹم آرڈر کرنا ہے۔ اگر ڈلیوری دستیاب ہے تو میں اپنی لوکیشن سینڈ کر دوں؟";var S=function(p){return [["",p]]}, HF=function(h,f){return [["Half",h],["Full",f]]};
