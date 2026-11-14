@@ -91,6 +91,13 @@ main section h2 em{font-style:normal;font-size:.72rem;font-weight:700;color:var(
 @keyframes dpop{from{opacity:0;transform:scale(.6)}}
 @keyframes dbeat{50%{transform:scale(1.15) rotate(-4deg)}}
 @media (prefers-reduced-motion:reduce){.deal,.deal-card,.deal-boom{animation:none}}
+.dealbar{direction:rtl;text-align:center;margin:10px 0 0;font-size:.88rem;font-weight:700;line-height:1.7}
+.dealbar:empty{display:none}
+.dealbar .ok{background:linear-gradient(135deg,#123d29,#1b6b45);color:#c9ffe0;border:1px solid #2f9c66;border-radius:12px;padding:9px 10px}
+.dealbar .need{background:#3a2412;border:1px solid #8a6420;border-radius:12px;padding:9px 10px 10px;color:var(--ink)}
+.dealbar .need b{color:var(--gold)}
+.dealbar .pg{height:7px;margin-top:7px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden;direction:ltr}
+.dealbar .pg i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#e8a317,#fbd56a);transition:width .3s}
 .vis[hidden]{display:none}.vis b{color:var(--gold);font-size:1.05rem;letter-spacing:.5px}
 footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 100px;border-top:1px solid var(--line)}
 .cbar{display:none;position:fixed;z-index:20;bottom:0;left:0;right:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(26,14,8,.92);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
@@ -184,6 +191,7 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 1
 <div class="ov" id="ov"><div class="sheet" role="dialog" aria-label="Your order">
   <div class="sh"><h3>🛒 Your Order</h3><button class="x" id="cclose" aria-label="Close">×</button></div>
   <div class="items" id="citems"></div>
+  <div class="dealbar" id="dealbar"></div>
   <div class="tot"><span>Total</span><span id="stotal">Rs 0</span></div>
   <a class="wa" id="cwa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2z"/></svg>Order all on WhatsApp</a>
   <button class="cl" id="cclear">Clear cart</button>
@@ -268,15 +276,20 @@ document.getElementById("q").addEventListener("input",function(){
 });
 var CART=[];try{CART=JSON.parse(localStorage.getItem("kk_cart")||"[]");if(!Array.isArray(CART))CART=[];}catch(e){CART=[];}
 function saveCart(){try{localStorage.setItem("kk_cart",JSON.stringify(CART));}catch(e){}}
+var DEAL_MIN=1000; // Dhamaka Deal: free 300ml cold drink on orders of Rs 1000 or more
 function renderCart(){
  var n=0,t=0,h="";
  CART.forEach(function(c,i){n+=c.q;t+=c.q*c.p;h+='<div class="ci"><div class="t">'+c.n+(c.l?'<small>'+c.l+' · Rs '+c.p+'</small>':'<small>Rs '+c.p+'</small>')+'</div><div class="qty"><button data-a="dec" data-i="'+i+'" aria-label="Less">−</button><span>'+c.q+'</span><button data-a="inc" data-i="'+i+'" aria-label="More">+</button></div><div class="p">Rs '+(c.q*c.p)+'</div></div>';});
  document.getElementById("citems").innerHTML=h;document.getElementById("ccount").textContent=n;
- document.getElementById("ctotal").textContent="Rs "+t;document.getElementById("stotal").textContent="Rs "+t;
+ document.getElementById("ctotal").textContent="Rs "+t;(function(){var d=document.getElementById("dealbar");
+  if(!n){d.innerHTML="";}
+  else if(t>=DEAL_MIN){d.innerHTML='<div class="ok">🎉 مبارک ہو! دھماکا ڈیل لگ گئی: 300ml کولڈرنک فری 🥤</div>';}
+  else{d.innerHTML='<div class="need">دھماکا ڈیل: <b>Rs '+(DEAL_MIN-t)+'</b> کا مزید آرڈر کریں اور 300ml کولڈرنک فری پائیں 🥤<div class="pg"><i style="width:'+Math.round(t/DEAL_MIN*100)+'%"></i></div></div>';}
+ })();document.getElementById("stotal").textContent="Rs "+t;
  document.getElementById("cbar").style.display=n?"block":"none";if(!n)document.getElementById("ov").classList.remove("open");
  var m=GREET+"\n\n";
  CART.forEach(function(c,i){m+=(i+1)+". "+c.n+(c.l?" ("+c.l+")":"")+" x "+c.q+" - Rs "+(c.q*c.p)+"\n";});
- m+="\nTotal: Rs "+t;document.getElementById("cwa").href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(m);saveCart();
+ m+="\nTotal: Rs "+t;if(t>=DEAL_MIN)m+="\n🎁 دھماکا ڈیل: 300ml کولڈرنک فری";document.getElementById("cwa").href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(m);saveCart();
 }
 menu.addEventListener("click",function(e){
  var b=e.target.closest(".add");if(!b)return;
