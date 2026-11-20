@@ -231,7 +231,7 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 1
 var PHONE = "923442285036";
 var GREET = "اسلام وعلیکم، مجھے یہ آئٹم آرڈر کرنا ہے۔ اگر ڈلیوری دستیاب ہے تو میں اپنی لوکیشن سینڈ کر دوں؟";
 var TABLE=(function(){var t="";try{t=(new URLSearchParams(location.search).get("table")||"").trim();if(t){sessionStorage.setItem("kk_table",t);}else{t=sessionStorage.getItem("kk_table")||"";}}catch(e){}return t.replace(/[^A-Za-z0-9\-]/g,"").slice(0,8);})();
-function head(){return TABLE?"اسلام وعلیکم، مجھے یہ آئٹم آرڈر کرنا ہے۔\n🪑 TABLE ORDER – Table "+TABLE:GREET+"\n🛵 ONLINE ORDER";}var S=function(p){return [["",p]]}, HF=function(h,f){return [["Half",h],["Full",f]]};
+function head(){return TABLE?"🪑 TABLE ORDER – Table "+TABLE:GREET+"\n🛵 ONLINE ORDER";}var S=function(p){return [["",p]]}, HF=function(h,f){return [["Half",h],["Full",f]]};
 var FL=function(e,n){return [n,e,[["Single",150],["Half",400],["Full",800]]]};
 var CATS = [
  {id:"offer",en:"Special Offer",ur:"اسپیشل آفر",items:[["Mini Zinger Burger","🍔",S(250)],["Mini Beef Burger","🍔",S(250)],["Mini Chicken Burger","🍔",S(250)]]},
