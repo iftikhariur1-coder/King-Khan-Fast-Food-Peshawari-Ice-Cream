@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>(function(){try{var q=new URLSearchParams(location.search).get("table");if(q)sessionStorage.setItem("kk_table",q);else q=sessionStorage.getItem("kk_table");if(q&&/^[A-Za-z0-9-]+$/.test(q))document.documentElement.className+=" tbl-mode";}catch(e){}})();</script>
-<meta name="theme-color" content="#050403">
+<meta name="theme-color" content="#efb865">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="King Khan">
@@ -102,7 +102,20 @@ main section h2 em{font-style:normal;font-size:.72rem;font-weight:700;color:var(
 .cover img.c-table{display:none}
 html.tbl-mode .cover img.c-online{display:none}
 html.tbl-mode .cover img.c-table{display:block}
-html.tbl-mode #dealbar{display:none!important}
+html.tbl-mode #deal,html.tbl-mode #dealbar{display:none!important}
+.deal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(12,6,3,.8);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);cursor:pointer;animation:dfade .25s ease-out}
+.deal-card{position:relative;width:100%;max-width:340px;text-align:center;direction:rtl;border-radius:24px;padding:26px 18px 20px;color:#fff;border:2px solid var(--gold);background:radial-gradient(circle at 50% 0%,#e0242f 0,#9b0e16 55%,#43050a 100%);box-shadow:0 0 0 5px rgba(245,185,66,.22),0 20px 60px rgba(0,0,0,.7),0 0 50px rgba(245,185,66,.25);animation:dpop .45s cubic-bezier(.2,1.4,.4,1)}
+.deal-x{position:absolute;top:8px;left:8px;width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:rgba(0,0,0,.35);color:#fff;font:inherit;font-size:20px;line-height:1;cursor:pointer}
+.deal-boom{font-size:54px;line-height:1;animation:dbeat 1.2s ease-in-out infinite}
+.deal-t{margin:6px 0 2px;font-size:2.1rem;font-weight:900;line-height:1.4;background:linear-gradient(#fff6bd,#f7c93a 50%,#d58a0a);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 0 #5a0a0e)}
+.deal-l{font-size:1.1rem;font-weight:700;line-height:1.8}
+.deal-l b{color:var(--gold2,#fbd56a);font-size:1.5rem}
+.deal-f{display:inline-block;margin-top:8px;background:linear-gradient(135deg,#fbd56a,#e8a317);color:#3a1d00;font-weight:900;font-size:1.15rem;border-radius:14px;padding:8px 16px;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+.deal-h{margin-top:14px;font-size:.78rem;color:rgba(255,255,255,.7)}
+@keyframes dfade{from{opacity:0}}
+@keyframes dpop{from{opacity:0;transform:scale(.6)}}
+@keyframes dbeat{50%{transform:scale(1.15) rotate(-4deg)}}
+@media (prefers-reduced-motion:reduce){.deal,.deal-card,.deal-boom{animation:none}}
 .vis[hidden]{display:none}.vis b{color:var(--gold);font-size:1.05rem;letter-spacing:.5px}
 footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 100px;border-top:1px solid var(--line)}
 .cbar{display:none;position:fixed;z-index:20;bottom:0;left:0;right:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(5,4,3,.93);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
@@ -132,6 +145,54 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 1
 .rsend{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;padding:13px;background:var(--green);color:#fff;font:inherit;font-weight:900;font-size:1rem;cursor:pointer}
 .rev small{display:block;margin-top:10px;color:var(--muted);text-align:center}
 @media(min-width:650px){main{padding-left:18px;padding-right:18px}.dish{padding:14px}.thumb{width:110px;height:92px;flex-basis:110px}.loc{margin-left:18px;margin-right:18px}}
+
+/* ===== BURGER THEME (bun gold, ketchup red, mustard) ===== */
+:root{--bg:#efb865;--panel:#fff3d9;--panel2:#ffe6b8;--ink:#2e1708;--muted:#5f3d1f;--gold:#8a4b00;--line:#dcae66;--mapbg:#efe0bd}
+html{background:#efb865}
+body{background:linear-gradient(180deg,#f8d796 0%,#efb865 55%,#e5a352 100%) fixed}
+body::before{inset:0;animation:none;will-change:auto;background:radial-gradient(rgba(255,246,222,.55) 2px,transparent 2.6px) 0 0/46px 46px,radial-gradient(rgba(255,246,222,.35) 1.6px,transparent 2.2px) 23px 23px/46px 46px}
+.sub{color:#5a3414}
+.tags span{background:#fff3d9;border-color:#dcae66;color:#6b3d0f}
+.qa a{background:#fff3d9;box-shadow:0 2px 8px rgba(90,50,10,.18)}
+.qa a:first-child{border-color:#c1121f66}
+.bar{background:rgba(248,215,150,.96)}
+.dish{box-shadow:0 3px 12px rgba(90,50,10,.2)}
+main section h2 em{background:#f2b705;color:#3b1f00}
+.thumb{background:#f0d7a6}
+.price{color:#b3141b}
+.price.oos{color:#6b6b6b}
+.wa.dis{background:#cdb68c;color:#6a5434}
+.chip{background:#fff;border-color:#dcae66;color:#3b1f0e}
+.chip.on{background:#f2b705;border-color:#b57a00;color:#2e1708}
+.add{background:#fff3d9;border:1px solid #c1121f;color:#c1121f}
+.add.ok{background:#e6f6ee;border-color:#278c5c;color:#185f3d}
+.lb p{color:#5a3a1c}
+.code{color:#8a4b00}
+.btns a.alt{background:#fff3d9;border:1px solid #c9a15a;color:#3b1f0e}
+.vis{background:#fff3d9}
+.dev{background:linear-gradient(160deg,#fff0cc,#ffd9b8);border-color:#c9893a}
+.dev-t{color:#8a2a00}.dev p{color:#5a3a1c}.dev p.ur{color:#2e1708}
+.dealbar .ok{background:#e6f6ee;color:#145a38;border-color:#2f9c66}
+.dealbar .need{background:#fff3d9;border-color:#dcae66;color:#2e1708}
+.dealbar .need b{color:#b3141b}
+.dealbar .pg{background:#e8d2a4}
+#offer h2 span{background:linear-gradient(#b3141b,#e0561e);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:none}
+.tbl{background:#fff3d9;border-color:#c9893a}.tbl b{color:#b3141b}
+.cbar{background:rgba(248,215,150,.97)}
+.sheet{background:#fff3d9;border-color:#dcae66}
+.x{background:#f0d7a6;color:#2e1708}
+.qty button{background:#fff;border-color:#dcae66;color:#2e1708}
+.cl{background:#f0d7a6;border-color:#dcae66;color:#2e1708}
+.hours{color:#3b1f0e}.hours b{color:#8a4b00}
+.st.o{background:#dff5e8;color:#145a38}.st.c{background:#fde3e5;color:#a1121b}
+.stars button{color:#d9c29a}.stars button.on{color:#e8a317;text-shadow:none}
+.rev input,.rev textarea{background:#fff8e8}
+.ov{background:rgba(30,12,2,.5)}
+footer{color:#4a2a10}
+/* ===== BLACK POPUP CARD ===== */
+.deal{background:rgba(0,0,0,.62)}
+.deal-card{background:radial-gradient(circle at 50% 0%,#303030 0,#0d0d0d 60%,#000 100%);border:2px solid #f5b942;box-shadow:0 0 0 5px rgba(245,185,66,.25),0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(245,185,66,.25)}
+.deal-t{filter:drop-shadow(0 2px 0 #000)}
 </style>
 </head>
 <body>
@@ -203,6 +264,17 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 12px 1
   <button class="cl" id="cclear">Clear cart</button>
 </div></div>
 
+<div class="deal" id="deal" role="dialog" aria-modal="true" aria-label="دھماکہ آفر" onclick="this.remove()">
+  <div class="deal-card">
+    <button class="deal-x" type="button" aria-label="Close" onclick="document.getElementById('deal').remove()">×</button>
+    <div class="deal-boom">💥</div>
+    <div class="deal-t">دھماکہ آفر</div>
+    <div class="deal-l"><b>1000</b> روپے کے آرڈر پر</div>
+    <div class="deal-f">🥤 300ml کولڈرنک فری</div>
+    <div class="deal-h">مینو دیکھنے کے لیے کہیں بھی ٹیپ کریں</div>
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){var d=document.getElementById("deal");if(d&&e.key==="Escape")d.remove();});</script>
 <script>
 var PHONE = "923442285036";
 var GREET = "اسلام وعلیکم، مجھے یہ آئٹم آرڈر کرنا ہے۔ اگر ڈلیوری دستیاب ہے تو میں اپنی لوکیشن سینڈ کر دوں؟";
